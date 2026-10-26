@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rincón de Lengua 5.° EGB</title>
+<meta name="description" content="Aprende Lengua y Literatura de 5.° EGB con explicaciones, juegos de práctica, estrellas y Chasqui, un ayudante que responde tus dudas. Para niños y niñas junto a su familia.">
+<meta name="theme-color" content="#3aa0ff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23ffc93c'/%3E%3Ctext x='32' y='46' font-family='Arial' font-size='40' font-weight='700' text-anchor='middle' fill='%231f2a44'%3E%C3%91%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#contenido">Ir al contenido</a>
+<div id="announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Mascota reutilizable -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="chasqui" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="112" rx="30" ry="5" fill="#1f2a44" opacity=".12"></ellipse>
+      <path d="M38 96 l-6 12 M50 98 l-2 12" stroke="#f08a24" stroke-width="5" stroke-linecap="round"></path>
+      <path d="M72 98 l2 12 M84 96 l6 12" stroke="#f08a24" stroke-width="5" stroke-linecap="round"></path>
+      <ellipse cx="60" cy="66" rx="40" ry="36" fill="#3aa0ff"></ellipse>
+      <ellipse cx="60" cy="76" rx="26" ry="22" fill="#d9eeff"></ellipse>
+      <path d="M22 62 q-16 6 -14 24 q14 -2 22 -12z" fill="#1f78d6"></path>
+      <path d="M98 62 q16 6 14 24 q-14 -2 -22 -12z" fill="#1f78d6"></path>
+      <rect x="26" y="50" width="68" height="12" rx="6" fill="#ff6b6b"></rect>
+      <rect x="36" y="50" width="8" height="12" fill="#ffc93c"></rect>
+      <rect x="56" y="50" width="8" height="12" fill="#2bb673"></rect>
+      <rect x="76" y="50" width="8" height="12" fill="#ffc93c"></rect>
+      <circle cx="46" cy="38" r="10" fill="#fff"></circle>
+      <circle cx="74" cy="38" r="10" fill="#fff"></circle>
+      <circle cx="48" cy="39" r="5" fill="#1f2a44"></circle>
+      <circle cx="72" cy="39" r="5" fill="#1f2a44"></circle>
+      <circle cx="50" cy="37" r="1.6" fill="#fff"></circle>
+      <circle cx="74" cy="37" r="1.6" fill="#fff"></circle>
+      <path d="M54 44 l6 10 l6 -10z" fill="#ffb020"></path>
+      <path d="M52 12 q8 -10 10 4 q8 -8 6 6" fill="none" stroke="#1f78d6" stroke-width="5" stroke-linecap="round"></path>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="a11y-bar" role="region" aria-label="Opciones para escuchar">
+    <div class="wrap a11y-row">
+      <button class="a11y-btn" id="btnListen" type="button" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"></path><path d="M16 8.5a4.5 4.5 0 0 1 0 7M18.5 6a8 8 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+        Modo escucha: <span class="state">apagado</span>
+      </button>
+      <button class="a11y-btn" id="btnSounds" type="button" aria-pressed="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l11-2v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><circle cx="6.5" cy="18" r="2.5"></circle><circle cx="17.5" cy="16" r="2.5"></circle></svg>
+        Sonidos: <span class="state">activados</span>
+      </button>
+      <span class="a11y-hint">Lee en voz alta temas, pruebas y a Chasqui. Si usas un lector de pantalla, deja el modo escucha apagado.</span>
+    </div>
+  </div>
+  <div class="wrap header-row">
+    <a class="brand" href="#inicio" aria-label="Rincón de Lengua, inicio">
+      <span class="brand-mark" aria-hidden="true">Ñ</span>
+      <span class="brand-text"><strong>Rincón de Lengua</strong><small>5.° EGB</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menú</button>
+    <nav class="main-nav" id="mainNav" aria-label="Principal">
+      <a href="#unidades">Unidades</a>
+      <a href="#temas">Temas</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#familias">Familias</a>
+      <button class="btn btn-sun btn-sm" type="button" data-open-chat>Hablar con Chasqui</button>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- PORTADA -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="pill">Lengua y Literatura · 5.° EGB</p>
+        <h1>¡Aprende Lengua <span class="hl">jugando</span> con Chasqui!</h1>
+        <p class="lead">Lee los temas de tu libro, resuelve retos, gana estrellas y pregúntale a Chasqui todo lo que no entiendas. ¡Mejor si lo haces junto a tu familia!</p>
+        <div class="hero-actions">
+          <a class="btn btn-coral" href="#temas">¡Empezar a aprender!</a>
+          <button class="btn btn-white" type="button" data-open-chat>Hablar con Chasqui</button>
+        </div>
+        <p class="teacher">Con tu profe: <strong>Mgtr. Evelyn Ivette Correa Asencio</strong></p>
+      </div>
+      <div class="hero-art">
+        <div class="speech">¡Hola! Soy <b>Chasqui</b>. Llevo mensajes por los Andes… ¡y ahora te ayudo con tus tareas!</div>
+        <svg class="mascot" viewBox="0 0 120 120" role="img" aria-label="Chasqui, un pajarito azul con bufanda de colores"><use href="#chasqui"></use></svg>
+      </div>
+    </div>
+    <svg class="landscape" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 160 L180 70 L300 140 L460 40 L620 150 L760 80 L900 150 L1060 30 L1220 140 L1440 60 L1440 220 L0 220Z" fill="#3f7fcf"></path>
+      <path d="M1060 30 L1100 62 L1080 58 L1060 70 L1040 58 L1020 62Z" fill="#fff"></path>
+      <path d="M460 40 L496 70 L476 66 L460 78 L444 66 L424 70Z" fill="#fff"></path>
+      <path d="M0 190 Q240 120 480 180 T960 170 T1440 160 L1440 220 L0 220Z" fill="#2bb673"></path>
+      <path d="M0 210 Q360 170 720 205 T1440 195 L1440 220 L0 220Z" fill="#1f9a5f"></path>
+    </svg>
+  </section>
+
+  <section class="stats-band">
+    <div class="wrap"><dl class="stats" id="stats"></dl></div>
+  </section>
+
+  <!-- UNIDADES -->
+  <section class="section" id="unidades">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="pill pill-grape">Tu libro, paso a paso</p>
+        <h2>Cuatro unidades llenas de aventuras</h2>
+        <p>Elige una unidad y descubre sus temas. Van en el mismo orden de tu libro.</p>
+      </header>
+      <div class="unit-cards" id="unitCards"></div>
+    </div>
+  </section>
+
+  <!-- TEMAS -->
+  <section class="section section-sky" id="temas">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="pill pill-coral">Explora y practica</p>
+        <h2>Busca un tema y gana estrellas</h2>
+        <p>Cada tema tiene un reto. Si lo resuelves, ¡ganas una estrella!</p>
+      </header>
+      <div class="toolbar">
+        <label class="search" for="q">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          <input id="q" type="search" aria-label="Buscar un tema" placeholder="Busca: tilde, leyenda, rima…" autocomplete="off">
+        </label>
+        <div class="filters" id="unitFilters" role="tablist" aria-label="Elegir unidad"></div>
+      </div>
+      <div class="star-bar" id="starBar"></div>
+      <div class="explorer">
+        <aside class="index" id="index" aria-label="Lista de temas"></aside>
+        <article class="sheet" id="sheet" aria-live="polite"></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECURSOS -->
+  <section class="section" id="recursos">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="pill pill-leaf">Para imprimir y trabajar</p>
+        <h2>Fichas para descargar</h2>
+        <p>Documentos de Word preparados por tu profe. Se abren en Word, Google Docs o LibreOffice.</p>
+      </header>
+      <div class="filters" id="resFilters" role="tablist" aria-label="Filtrar fichas"></div>
+      <div class="res-grid" id="resGrid"></div>
+    </div>
+  </section>
+
+  <!-- FAMILIAS -->
+  <section class="section section-sun" id="familias">
+    <div class="wrap family-grid">
+      <div class="family-copy">
+        <p class="pill pill-ink">Para mamá, papá o un adulto de la familia</p>
+        <h2>Aprendemos mejor en familia</h2>
+        <p>Chasqui es un ayudante con inteligencia artificial que conoce los temas del libro. Está pensado para que niñas y niños lo usen <b>acompañados por un adulto</b>.</p>
+        <ul class="checks">
+          <li>Explica los temas con palabras sencillas y ejemplos del Ecuador.</li>
+          <li>Da pistas en lugar de hacer la tarea, para que su hijo o hija piense.</li>
+          <li>Si usted le escribe, Chasqui también le da ideas para acompañar en casa.</li>
+        </ul>
+        <button class="btn btn-coral" type="button" data-open-chat>Probar a Chasqui</button>
+        <div class="box access-box">
+          <h3>Para niñas y niños con discapacidad visual</h3>
+          <ul>
+            <li><b>Modo escucha</b> (botón arriba de todo): el sitio lee en voz alta los temas, las preguntas, los resultados y las respuestas de Chasqui.</li>
+            <li><b>Sonidos</b> distintos al acertar, al fallar y al ganar una estrella.</li>
+            <li><b>Pruebas con teclado:</b> 1, 2 y 3 (o A, B, C; V y F) para responder, flechas para avanzar o volver, R para repetir la pregunta y Escape para callar la voz.</li>
+            <li>Funciona también con lectores de pantalla como NVDA, TalkBack o VoiceOver. En ese caso, deje el modo escucha apagado para que no hablen dos voces a la vez.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notice">
+        <h3>Reglas para usar a Chasqui</h3>
+        <ol>
+          <li>Siéntese junto a su hijo o hija mientras conversa con Chasqui.</li>
+          <li>Escriba el <b>código de la clase</b> que le dio la docente.</li>
+          <li>No escriban datos personales: nombres completos, dirección, teléfono ni fotos.</li>
+          <li>Chasqui puede equivocarse. Si algo no está claro, consulten con la docente.</li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="brand-text"><strong>Rincón de Lengua</strong></p>
+      <p>Sitio para aprender Lengua y Literatura en 5.° grado de Educación General Básica. Basado en el Texto del Estudiante del Ministerio de Educación del Ecuador.</p>
+    </div>
+    <nav aria-label="Secciones">
+      <h3>Secciones</h3>
+      <a href="#unidades">Unidades</a>
+      <a href="#temas">Temas</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#familias">Familias</a>
+    </nav>
+    <div>
+      <h3>Docente</h3>
+      <p>Mgtr. Evelyn Ivette Correa Asencio<br>Año lectivo 2026-2027</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© 2026 Rincón de Lengua · Material educativo gratuito.</p>
+  </div>
+</footer>
+
+<button class="launcher" id="launcher" type="button" data-open-chat aria-controls="panel">
+  <svg class="launcher-bird" viewBox="0 0 120 120" aria-hidden="true"><use href="#chasqui"></use></svg>
+  <span class="txt">¡Pregúntale a Chasqui!</span>
+</button>
+
+<section class="panel" id="panel" hidden aria-label="Chasqui, tu ayudante">
+  <div class="panel-head">
+    <svg class="panel-bird" viewBox="0 0 120 120" aria-hidden="true"><use href="#chasqui"></use></svg>
+    <div>
+      <h2>Chasqui</h2>
+      <p>Tu ayudante de Lengua</p>
+    </div>
+    <button class="x" id="closeChat" type="button" aria-label="Cerrar">×</button>
+  </div>
+  <div class="context" id="ctx"></div>
+  <div class="msgs" id="msgs" aria-live="polite"></div>
+  <form class="code-form" id="codeForm" hidden>
+    <label for="code">Código de la clase (pídeselo a un adulto)</label>
+    <div class="code-row">
+      <input id="code" type="text" autocomplete="off" placeholder="Escribe el código">
+      <button class="btn btn-sun btn-sm" type="submit">Guardar</button>
+    </div>
+  </form>
+  <div class="sugs" id="sugs"></div>
+  <form class="composer" id="composer">
+    <textarea id="msg" rows="1" placeholder="Escribe tu pregunta…" aria-label="Tu pregunta"></textarea>
+    <button class="send" id="send" type="submit">Enviar</button>
+  </form>
+</section>
+</body>
+</html>

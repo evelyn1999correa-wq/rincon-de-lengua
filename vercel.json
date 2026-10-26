@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/chasqui.js": {
+      "maxDuration": 60
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "rincon-de-lengua",
+  "private": true,
+  "type": "module",
+  "description": "Sitio de estudio de Lengua y Literatura 5.° EGB con el ayudante Chasqui",
+  "scripts": {
+    "dev": "node servidor-local.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0"
+  }
+}
